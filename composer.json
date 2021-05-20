@@ -1,0 +1,17 @@
+{
+  "name": "jerzyje/cart",
+  "description": "Cart class with `chain of responsibility` pattern",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "yurii yezlovetskyi",
+      "email": "lpr433@gmail.com"
+    }
+  ],
+  "require": {
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8.5"
+  }
+}

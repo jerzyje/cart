@@ -1,0 +1,8 @@
+###> PhpStorm
+/.idea/
+.jshintrc
+###< PhpStorm
+
+/vendor/
+/phpunit.xml
+/.phpunit.result.cache
