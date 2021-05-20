@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Handler;
+namespace App\Handler;
 
 class HandlerChainBuilder
 {

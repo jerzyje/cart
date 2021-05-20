@@ -2,13 +2,16 @@
 
 declare(strict_types=1);
 
-use Entity\Cart;
-use Handler\AdditionHandler;
-use Handler\ConflictHandler;
-use Handler\HandlerChainBuilder;
-use Handler\RemovalHandler;
-use Repository\CartRepositoryInterface;
-use Entity\CartItemInterface;
+namespace App;
+
+use App\Entity\Cart;
+use App\Handler\AdditionHandler;
+use App\Handler\ConflictHandler;
+use App\Handler\HandlerChainBuilder;
+use App\Handler\RemovalHandler;
+use App\Repository\CartRepositoryInterface;
+use App\Entity\CartItemInterface;
+use Exception;
 
 class CartService implements CartServiceInterface
 {

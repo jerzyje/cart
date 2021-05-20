@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Handler;
+namespace App\Handler;
 
-use Entity\CartInterface;
-use Entity\CartItemInterface;
+use App\Entity\CartInterface;
+use App\Entity\CartItemInterface;
 
 final class AdditionHandler extends AbstractHandler
 {

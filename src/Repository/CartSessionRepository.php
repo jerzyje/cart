@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Repository;
+namespace App\Repository;
 
-use Entity\Cart;
-use Entity\CartInterface;
+use App\Entity\Cart;
+use App\Entity\CartInterface;
 
 class CartSessionRepository implements CartRepositoryInterface
 {

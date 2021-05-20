@@ -2,8 +2,10 @@
 
 declare(strict_types=1);
 
-use Entity\CartItemInterface;
-use Exception\CartItemNotFoundException;
+namespace App;
+
+use App\Entity\CartItemInterface;
+use App\Exception\CartItemNotFoundException;
 
 interface CartServiceInterface
 {

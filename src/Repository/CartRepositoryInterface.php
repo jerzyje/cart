@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Repository;
+namespace App\Repository;
 
-use Entity\CartInterface;
+use App\Entity\CartInterface;
 
 interface CartRepositoryInterface
 {
