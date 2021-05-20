@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace Repository;
 
-use Entity\Cart;
+use Entity\CartInterface;
 
 interface CartRepositoryInterface
 {
     /**
-     * @return Cart
+     * @return CartInterface
      */
-    public function getCart(): Cart;
+    public function getCart(): CartInterface;
 
     /**
-     * @param Cart $cart
+     * @param CartInterface $cart
      */
-    public function saveCart(Cart $cart): void;
+    public function saveCart(CartInterface $cart): void;
 }

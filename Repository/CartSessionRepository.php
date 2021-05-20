@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Repository;
 
 use Entity\Cart;
+use Entity\CartInterface;
 
 class CartSessionRepository implements CartRepositoryInterface
 {
@@ -15,7 +16,7 @@ class CartSessionRepository implements CartRepositoryInterface
         session_start();
     }
 
-    public function getCart(): Cart
+    public function getCart(): CartInterface
     {
         if (!isset($_SESSION[self::CART_NAME])) {
             return new Cart();
@@ -23,13 +24,13 @@ class CartSessionRepository implements CartRepositoryInterface
 
         $normalizedCart = $_SESSION[self::CART_NAME];
 
-        /** @var Cart $cart*/
+        /** @var CartInterface $cart*/
         $cart = unserialize($normalizedCart);
 
         return $cart;
     }
 
-    public function saveCart(Cart $cart): void
+    public function saveCart(CartInterface $cart): void
     {
         $_SESSION[self::CART_NAME] = serialize($cart);
     }
