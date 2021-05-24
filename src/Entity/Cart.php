@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
-use \Exception;
+use App\Exception\CartItemNotFoundException;
 
 class Cart implements CartInterface
 {
@@ -30,10 +30,12 @@ class Cart implements CartInterface
     {
         $foundItem = null;
         foreach ($this->getItems() as $item) {
-            $foundItem = ($item->getId() === $id) ? $item : null;
+            if ($item->getId() === $id) {
+                $foundItem = $item;
+            }
         }
         if (null === $foundItem) {
-            throw new Exception('Item with id ' . $id . ' not found in cart');
+            throw new CartItemNotFoundException('Item with id ' . $id . ' not found in cart');
         }
 
         return $foundItem;
@@ -42,9 +44,9 @@ class Cart implements CartInterface
     public function removeItem(int $id): CartInterface
     {
         $removingItem = $this->getItem($id);
-        foreach ($this->getItems() as $item) {
+        foreach ($this->getItems() as $key=>$item) {
             if ($removingItem->getId() === $item->getId()) {
-                unset($this->items[$id]);
+                unset($this->items[$key]);
             }
         }
 

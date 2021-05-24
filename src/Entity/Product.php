@@ -15,4 +15,11 @@ class Product implements ProductInterface
     {
         return $this->type;
     }
+
+    public function setType(string $type):ProductInterface
+    {
+        $this->type = $type;
+
+        return $this;
+    }
 }

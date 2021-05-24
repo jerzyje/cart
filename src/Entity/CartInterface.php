@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
+use App\Exception\CartItemNotFoundException;
 use \Exception;
 
 interface CartInterface
@@ -22,14 +23,14 @@ interface CartInterface
     /**
      * @param int $id
      * @return CartItemInterface
-     * @throws Exception
+     * @throws CartItemNotFoundException
      */
     public function getItem(int $id): CartItemInterface;
 
     /**
      * @param int $id
      * @return CartInterface
-     * @throws Exception
+     * @throws CartItemNotFoundException
      */
     public function removeItem(int $id): CartInterface;
 
